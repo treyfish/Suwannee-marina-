@@ -150,21 +150,30 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Photo Gallery */}
-      <section className="py-12 bg-marina-navy">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-marina-teal text-xs font-semibold uppercase tracking-widest text-center mb-6">Our Showroom</p>
-          <div className="grid grid-cols-3 gap-3">
-            {[
-              { src: '/images/mercury-showroom-2.jpg', alt: 'Mercury outboard engine lineup' },
-              { src: '/images/mercury-showroom-3.jpg', alt: 'Mercury engines on stands in showroom' },
-              { src: '/images/mercury-showroom-4.jpg', alt: 'Mercury 75 years display with engine inventory' },
-            ].map(({ src, alt }) => (
-              <div key={src} className="rounded-xl overflow-hidden aspect-square">
-                <img src={src} alt={alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
-              </div>
-            ))}
+      {/* Mercury CTA Banner */}
+      <section className="relative bg-marina-navy overflow-hidden">
+        <img
+          src="/images/marina-building.png"
+          alt="Suwannee Shores Marina"
+          className="absolute inset-0 w-full h-full object-cover opacity-20"
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+          <div className="inline-block bg-marina-amber/20 border border-marina-amber/40 text-marina-amber text-xs font-semibold px-3 py-1 rounded-full tracking-wide mb-4">
+            Mercury Platinum Dealership
           </div>
+          <h2 className="font-serif text-3xl font-bold text-white mb-4">
+            The Largest Mercury Inventory on the Suwannee
+          </h2>
+          <p className="text-white/70 mb-8">
+            From small four-strokes to high-horsepower outboards — we stock and service the full Mercury lineup.
+          </p>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 bg-marina-amber hover:bg-amber-600 text-white px-8 py-3 rounded-md font-semibold transition-colors"
+          >
+            <Phone size={18} />
+            Call About Engine Inventory
+          </a>
         </div>
       </section>
 
