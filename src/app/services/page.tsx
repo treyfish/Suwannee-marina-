@@ -89,39 +89,22 @@ export default function ServicesPage() {
       <section className="py-20 bg-marina-navy" id="service">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 relative rounded-2xl overflow-hidden min-h-[360px] flex items-end" style={{background:'linear-gradient(135deg, #0a1628 0%, #0D2B45 40%, #1A3A5C 70%, #1A7F8E22 100%)'}}>
-              {/* Engine schematic decoration */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-10">
-                <svg viewBox="0 0 200 200" className="w-64 h-64 text-marina-teal" fill="none" stroke="currentColor" strokeWidth="1">
-                  <circle cx="100" cy="100" r="80" strokeDasharray="8 4"/>
-                  <circle cx="100" cy="100" r="50"/>
-                  <circle cx="100" cy="100" r="20" fill="currentColor"/>
-                  <line x1="100" y1="20" x2="100" y2="50"/>
-                  <line x1="100" y1="150" x2="100" y2="180"/>
-                  <line x1="20" y1="100" x2="50" y2="100"/>
-                  <line x1="150" y1="100" x2="180" y2="100"/>
-                  <line x1="43" y1="43" x2="64" y2="64"/>
-                  <line x1="136" y1="136" x2="157" y2="157"/>
-                  <line x1="157" y1="43" x2="136" y2="64"/>
-                  <line x1="64" y1="136" x2="43" y2="157"/>
-                </svg>
-              </div>
-              <div className="absolute top-6 left-6 right-6">
-                <div className="grid grid-cols-3 gap-3">
-                  {['FourStroke', 'V8 Verado', 'SeaPro', 'Pro XS', 'Jet', 'Optimax'].map((model) => (
-                    <div key={model} className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-center">
-                      <div className="text-marina-teal text-xs font-semibold">{model}</div>
-                    </div>
-                  ))}
+            <div className="order-2 lg:order-1 relative rounded-2xl overflow-hidden min-h-[360px]">
+              <img
+                src="/images/mercury-showroom-1.jpg"
+                alt="Mercury outboard engines on display at Suwannee Shores Marina"
+                className="w-full h-full object-cover absolute inset-0"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="relative z-10 p-6 flex flex-col justify-end h-full min-h-[360px]">
+                <div className="mt-auto">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Wrench size={16} className="text-marina-amber" />
+                    <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest">Mercury Platinum Certified</div>
+                  </div>
+                  <div className="text-white font-serif font-bold text-xl">Expert Engine Service</div>
+                  <div className="text-white/70 text-sm mt-1">Sales · Service · Warranty · Parts</div>
                 </div>
-              </div>
-              <div className="relative z-10 p-6 bg-gradient-to-t from-black/70 to-transparent w-full">
-                <div className="flex items-center gap-2 mb-1">
-                  <Wrench size={16} className="text-marina-amber" />
-                  <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest">Mercury Platinum Certified</div>
-                </div>
-                <div className="text-white font-serif font-bold text-xl">Expert Engine Service</div>
-                <div className="text-white/60 text-sm mt-1">Sales · Service · Warranty · Parts</div>
               </div>
             </div>
             <div className="order-1 lg:order-2">
@@ -159,6 +142,24 @@ export default function ServicesPage() {
                 Schedule Service
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo Gallery */}
+      <section className="py-12 bg-marina-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-marina-teal text-xs font-semibold uppercase tracking-widest text-center mb-6">Our Showroom</p>
+          <div className="grid grid-cols-3 gap-3">
+            {[
+              { src: '/images/mercury-showroom-2.jpg', alt: 'Mercury outboard engine lineup' },
+              { src: '/images/mercury-showroom-3.jpg', alt: 'Mercury engines on stands in showroom' },
+              { src: '/images/mercury-showroom-4.jpg', alt: 'Mercury 75 years display with engine inventory' },
+            ].map(({ src, alt }) => (
+              <div key={src} className="rounded-xl overflow-hidden aspect-square">
+                <img src={src} alt={alt} className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            ))}
           </div>
         </div>
       </section>

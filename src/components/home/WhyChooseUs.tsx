@@ -34,32 +34,36 @@ export default function WhyChooseUs() {
             </ul>
           </div>
 
-          {/* Mercury Badge Card */}
+          {/* Mercury Photo + Badge */}
           <div className="relative">
-            <div className="bg-marina-navy rounded-2xl p-8 text-white shadow-xl">
-              <div className="text-marina-amber text-sm font-semibold uppercase tracking-widest mb-3">
-                Authorized Dealer
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <div className="relative">
+                <img
+                  src="/images/mercury-showroom-3.jpg"
+                  alt="Mercury outboard engine showroom at Suwannee Shores Marina"
+                  className="w-full h-64 object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-marina-navy/80 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest mb-1">Authorized Dealer</div>
+                  <div className="text-white font-serif font-bold text-xl">Mercury Platinum Dealership</div>
+                </div>
               </div>
-              <h3 className="font-serif text-3xl font-bold mb-4">
-                Mercury Platinum<br />Dealership
-              </h3>
-              <p className="text-white/70 leading-relaxed mb-6">
-                As a Mercury Platinum dealer, we maintain the highest standards in outboard motor
-                sales, service, and warranty support. Our certified technicians are experts in
-                all Mercury engine lines.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {['Sales', 'Service', 'Warranty', 'Parts'].map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-marina-teal/20 border border-marina-teal/40 text-marina-teal text-sm px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="bg-marina-navy p-6">
+                <p className="text-white/70 text-sm leading-relaxed mb-4">
+                  As a Mercury Platinum dealer, we maintain the highest standards in outboard motor
+                  sales, service, and warranty support. Our certified technicians are experts in
+                  all Mercury engine lines.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {['Sales', 'Service', 'Warranty', 'Parts'].map((tag) => (
+                    <span key={tag} className="bg-marina-teal/20 border border-marina-teal/40 text-marina-teal text-xs px-3 py-1 rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-            {/* Decorative accent */}
             <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-marina-teal/10 rounded-full -z-10" />
             <div className="absolute -top-4 -left-4 w-20 h-20 bg-marina-amber/10 rounded-full -z-10" />
           </div>
