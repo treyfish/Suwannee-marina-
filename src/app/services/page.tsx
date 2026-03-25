@@ -68,10 +68,15 @@ export default function ServicesPage() {
                 Call About Inventory
               </a>
             </div>
-            <div className="bg-marina-sand rounded-2xl p-10 flex items-center justify-center min-h-[300px]">
-              <div className="text-center text-marina-slate/40">
-                <Ship size={80} className="mx-auto mb-4 text-marina-teal/30" />
-                <p className="text-sm">Boat inventory photo</p>
+            <div className="relative rounded-2xl overflow-hidden min-h-[360px] bg-gradient-to-br from-marina-navy via-marina-blue to-marina-teal flex items-end">
+              <div className="absolute inset-0 opacity-20" style={{backgroundImage:'radial-gradient(circle at 30% 40%, #1A7F8E 0%, transparent 60%), radial-gradient(circle at 80% 70%, #D4892A 0%, transparent 50%)'}} />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Ship size={120} className="text-white/10" />
+              </div>
+              <div className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
+                <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest mb-1">New &amp; Pre-Owned</div>
+                <div className="text-white font-serif font-bold text-xl">Boats for Every Budget</div>
+                <div className="text-white/60 text-sm mt-1">Financing available on-site</div>
               </div>
             </div>
           </div>
@@ -84,11 +89,39 @@ export default function ServicesPage() {
       <section className="py-20 bg-marina-navy" id="service">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 bg-white/5 border border-white/10 rounded-2xl p-10 flex items-center justify-center min-h-[300px]">
-              <div className="text-center">
-                <Wrench size={80} className="mx-auto mb-4 text-marina-teal/40" />
-                <div className="text-marina-amber font-bold text-lg">Mercury Platinum Dealer</div>
-                <div className="text-white/40 text-sm mt-1">Certified Service Center</div>
+            <div className="order-2 lg:order-1 relative rounded-2xl overflow-hidden min-h-[360px] flex items-end" style={{background:'linear-gradient(135deg, #0a1628 0%, #0D2B45 40%, #1A3A5C 70%, #1A7F8E22 100%)'}}>
+              {/* Engine schematic decoration */}
+              <div className="absolute inset-0 flex items-center justify-center opacity-10">
+                <svg viewBox="0 0 200 200" className="w-64 h-64 text-marina-teal" fill="none" stroke="currentColor" strokeWidth="1">
+                  <circle cx="100" cy="100" r="80" strokeDasharray="8 4"/>
+                  <circle cx="100" cy="100" r="50"/>
+                  <circle cx="100" cy="100" r="20" fill="currentColor"/>
+                  <line x1="100" y1="20" x2="100" y2="50"/>
+                  <line x1="100" y1="150" x2="100" y2="180"/>
+                  <line x1="20" y1="100" x2="50" y2="100"/>
+                  <line x1="150" y1="100" x2="180" y2="100"/>
+                  <line x1="43" y1="43" x2="64" y2="64"/>
+                  <line x1="136" y1="136" x2="157" y2="157"/>
+                  <line x1="157" y1="43" x2="136" y2="64"/>
+                  <line x1="64" y1="136" x2="43" y2="157"/>
+                </svg>
+              </div>
+              <div className="absolute top-6 left-6 right-6">
+                <div className="grid grid-cols-3 gap-3">
+                  {['FourStroke', 'V8 Verado', 'SeaPro', 'Pro XS', 'Jet', 'Optimax'].map((model) => (
+                    <div key={model} className="bg-white/5 border border-white/10 rounded-lg px-2 py-1.5 text-center">
+                      <div className="text-marina-teal text-xs font-semibold">{model}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="relative z-10 p-6 bg-gradient-to-t from-black/70 to-transparent w-full">
+                <div className="flex items-center gap-2 mb-1">
+                  <Wrench size={16} className="text-marina-amber" />
+                  <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest">Mercury Platinum Certified</div>
+                </div>
+                <div className="text-white font-serif font-bold text-xl">Expert Engine Service</div>
+                <div className="text-white/60 text-sm mt-1">Sales · Service · Warranty · Parts</div>
               </div>
             </div>
             <div className="order-1 lg:order-2">

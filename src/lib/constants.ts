@@ -7,7 +7,7 @@ export const ADDRESS = '28686 SE Hwy 19'
 export const CITY_STATE_ZIP = 'Old Town, FL 32680'
 export const FULL_ADDRESS = `${ADDRESS}, ${CITY_STATE_ZIP}`
 export const EMAIL = 'info@suwanneeshoresmarinainc.com'
-export const FACEBOOK_URL = 'https://www.facebook.com/people/Suwannee-Shores-Marina-Inc/100057408963947/'
+export const FACEBOOK_URL = 'https://www.facebook.com/share/1DtJSGtUed/?mibextid=wwXIfr'
 export const MAPS_URL = 'https://maps.google.com/?q=28686+SE+Hwy+19+Old+Town+FL+32680'
 export const MAPS_EMBED_URL = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.0!2d-83.0!3d29.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDM2JzAwLjAiTiA4M8KwMDAnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890'
 export const OWNER = 'Heath Greene'
