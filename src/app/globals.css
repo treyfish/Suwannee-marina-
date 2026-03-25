@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marina-navy: #0D2B45;
+  --color-marina-blue: #1A5276;
+  --color-marina-teal: #1A7F8E;
+  --color-marina-sand: #F0E6D3;
+  --color-marina-amber: #D4892A;
+  --color-marina-white: #FAFAF8;
+  --color-marina-slate: #3D4F5C;
+
+  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --font-family-serif: 'Playfair Display', Georgia, serif;
+  --font-family-mono: ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-marina-white);
+  color: var(--color-marina-slate);
+}
