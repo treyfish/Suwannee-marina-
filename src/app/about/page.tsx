@@ -69,23 +69,19 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative rounded-2xl overflow-hidden min-h-[380px] flex items-end bg-gradient-to-br from-marina-navy via-marina-blue to-marina-teal/60">
-              <div className="absolute inset-0 opacity-15" style={{backgroundImage:'radial-gradient(ellipse at 20% 80%, #D4892A 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, #1A7F8E 0%, transparent 60%)'}} />
-              {/* Decorative river/dock lines */}
-              <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 400 380" fill="none" stroke="#1A7F8E" strokeWidth="1" preserveAspectRatio="none">
-                <path d="M0 300 Q100 280 200 310 Q300 340 400 300" strokeWidth="2"/>
-                <path d="M0 330 Q100 310 200 340 Q300 370 400 330" strokeWidth="2"/>
-                <line x1="80" y1="100" x2="80" y2="300"/>
-                <line x1="120" y1="80" x2="120" y2="300"/>
-                <line x1="280" y1="110" x2="280" y2="300"/>
-                <line x1="320" y1="90" x2="320" y2="300"/>
-                <rect x="60" y="80" width="80" height="30" rx="4"/>
-                <rect x="260" y="85" width="80" height="30" rx="4"/>
-              </svg>
-              <div className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
-                <div className="text-marina-teal text-xs font-semibold uppercase tracking-widest mb-1">Old Town, Florida</div>
-                <div className="text-white font-serif font-bold text-xl">On the Suwannee River</div>
-                <div className="text-white/60 text-sm mt-1">Serving boaters since 1973</div>
+            <div className="relative rounded-2xl overflow-hidden min-h-[380px]">
+              <img
+                src="/images/marina-building.png"
+                alt="Suwannee Shores Marina building in Old Town, Florida"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="relative z-10 p-6 flex flex-col justify-end min-h-[380px]">
+                <div className="mt-auto">
+                  <div className="text-marina-teal text-xs font-semibold uppercase tracking-widest mb-1">Old Town, Florida</div>
+                  <div className="text-white font-serif font-bold text-xl">Suwannee Shores Marina</div>
+                  <div className="text-white/60 text-sm mt-1">Serving boaters since 1973</div>
+                </div>
               </div>
             </div>
           </div>

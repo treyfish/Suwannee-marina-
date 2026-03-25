@@ -68,15 +68,19 @@ export default function ServicesPage() {
                 Call About Inventory
               </a>
             </div>
-            <div className="relative rounded-2xl overflow-hidden min-h-[360px] bg-gradient-to-br from-marina-navy via-marina-blue to-marina-teal flex items-end">
-              <div className="absolute inset-0 opacity-20" style={{backgroundImage:'radial-gradient(circle at 30% 40%, #1A7F8E 0%, transparent 60%), radial-gradient(circle at 80% 70%, #D4892A 0%, transparent 50%)'}} />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <Ship size={120} className="text-white/10" />
-              </div>
-              <div className="relative z-10 p-6 bg-gradient-to-t from-black/60 to-transparent w-full">
-                <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest mb-1">New &amp; Pre-Owned</div>
-                <div className="text-white font-serif font-bold text-xl">Boats for Every Budget</div>
-                <div className="text-white/60 text-sm mt-1">Financing available on-site</div>
+            <div className="relative rounded-2xl overflow-hidden min-h-[360px]">
+              <img
+                src="/images/marina-building.png"
+                alt="Suwannee Shores Marina dealership"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="relative z-10 p-6 flex flex-col justify-end min-h-[360px]">
+                <div className="mt-auto">
+                  <div className="text-marina-amber text-xs font-semibold uppercase tracking-widest mb-1">New &amp; Pre-Owned</div>
+                  <div className="text-white font-serif font-bold text-xl">Boats for Every Budget</div>
+                  <div className="text-white/60 text-sm mt-1">Financing available on-site</div>
+                </div>
               </div>
             </div>
           </div>
@@ -91,8 +95,8 @@ export default function ServicesPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative rounded-2xl overflow-hidden min-h-[360px]">
               <img
-                src="/images/mercury-showroom-1.jpg"
-                alt="Mercury outboard engines on display at Suwannee Shores Marina"
+                src="/images/mercury-motor.jpeg"
+                alt="Mercury outboard engine at Suwannee Shores Marina"
                 className="w-full h-full object-cover absolute inset-0"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

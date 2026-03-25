@@ -5,9 +5,15 @@ import { PHONE, PHONE_HREF, FOUNDED } from '@/lib/constants'
 export default function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-marina-navy">
-      {/* Background gradient layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-marina-navy via-marina-blue to-marina-teal/30" />
-      <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-marina-teal via-transparent to-transparent" />
+      {/* Building background photo */}
+      <img
+        src="/images/marina-building.png"
+        alt="Suwannee Shores Marina building"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+      {/* Dark overlay so text stays readable */}
+      <div className="absolute inset-0 bg-marina-navy/70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-marina-navy/80 via-transparent to-marina-navy/30" />
 
       {/* Animated wave at bottom */}
       <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">

@@ -39,8 +39,8 @@ export default function WhyChooseUs() {
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <div className="relative">
                 <img
-                  src="/images/mercury-showroom-3.jpg"
-                  alt="Mercury outboard engine showroom at Suwannee Shores Marina"
+                  src="/images/mercury-motor.jpeg"
+                  alt="Mercury outboard engine at Suwannee Shores Marina"
                   className="w-full h-64 object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-marina-navy/80 to-transparent" />
