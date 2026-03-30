@@ -1,17 +1,25 @@
 @import "tailwindcss";
 
 @theme {
-  --color-marina-navy: #0D2B45;
-  --color-marina-blue: #1A5276;
-  --color-marina-teal: #1A7F8E;
-  --color-marina-sand: #F0E6D3;
-  --color-marina-amber: #D4892A;
-  --color-marina-white: #FAFAF8;
-  --color-marina-slate: #3D4F5C;
+  --color-label: #1e293b;
+  --color-label-bg: #fbbf24;
+  --color-border: #94a3b8;
+  --color-section-hero: #dbeafe;
+  --color-section-nav: #e0e7ff;
+  --color-section-features: #d1fae5;
+  --color-section-cta: #fef3c7;
+  --color-section-testimonials: #ede9fe;
+  --color-section-faq: #ffe4e6;
+  --color-section-footer: #1e293b;
+  --color-section-sidebar: #f0fdf4;
+  --color-section-grid: #f0f9ff;
+  --color-section-stats: #fdf4ff;
+  --color-section-newsletter: #ecfdf5;
+  --color-bg: #f8fafc;
+  --color-text: #334155;
 
   --font-family-sans: 'Inter', system-ui, sans-serif;
-  --font-family-serif: 'Playfair Display', Georgia, serif;
-  --font-family-mono: ui-monospace, monospace;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
 html {
@@ -19,6 +27,58 @@ html {
 }
 
 body {
-  background-color: var(--color-marina-white);
-  color: var(--color-marina-slate);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Label tag styling */
+.label-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1e293b;
+  color: #fbbf24;
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+}
+
+.label-tag::before {
+  content: "\2039";
+  opacity: 0.5;
+}
+
+.label-tag::after {
+  content: "\203A";
+  opacity: 0.5;
+}
+
+/* Dashed border for sections */
+.section-outline {
+  position: relative;
+  border: 2px dashed #94a3b8;
+  border-radius: 8px;
+  margin: 12px;
+}
+
+/* Description tooltip */
+.section-desc {
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  color: #64748b;
+  padding: 4px 10px;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 4px;
+  max-width: 300px;
 }
