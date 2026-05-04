@@ -7,6 +7,7 @@ import { liveBalance } from '@/lib/finance'
 import { formatCurrency } from '@/lib/format'
 import { Numeric } from './Numeric'
 import { LiveInterestTotal } from './LiveInterest'
+import { BrandMark } from './BrandMark'
 
 export type Tab = 'home' | 'strategy' | 'update' | 'settings'
 
@@ -40,19 +41,18 @@ export function AppShell({
     <header className="sticky top-0 z-30 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
         {/* Brand */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
           <div
-            className="flex h-7 w-7 items-center justify-center rounded-md"
+            className="flex h-8 w-8 items-center justify-center rounded-lg"
             style={{
               background: 'var(--color-accent-soft)',
               color: 'var(--color-accent)',
               border: '1px solid rgba(52,211,153,0.25)',
             }}
-            aria-hidden
           >
-            <span className="mono text-[13px] font-semibold">C</span>
+            <BrandMark size={20} title="Clearance" />
           </div>
-          <span className="text-[13px] font-semibold tracking-tight">Clearance</span>
+          <span className="text-[14px] font-semibold tracking-tight">Clearance</span>
         </div>
 
         {/* Total balance — center on desktop */}

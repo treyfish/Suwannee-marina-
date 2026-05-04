@@ -1,6 +1,7 @@
 'use client'
 
-import { Plus, Sparkles } from 'lucide-react'
+import { Plus } from 'lucide-react'
+import { BrandMark } from './BrandMark'
 
 type Props = {
   onAdd: () => void
@@ -11,13 +12,14 @@ export function EmptyState({ onAdd, onDemo }: Props) {
   return (
     <div className="surface flex flex-col items-center justify-center gap-6 px-8 py-16 text-center fade-up">
       <div
-        className="flex h-14 w-14 items-center justify-center rounded-full"
+        className="flex h-16 w-16 items-center justify-center rounded-2xl"
         style={{
           background: 'var(--color-accent-soft)',
           color: 'var(--color-accent)',
+          border: '1px solid rgba(52,211,153,0.25)',
         }}
       >
-        <Sparkles size={22} />
+        <BrandMark size={32} />
       </div>
       <div className="max-w-md">
         <h2 className="text-xl font-semibold tracking-tight">Clear runway, ahead.</h2>
