@@ -1,11 +1,19 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Anatomy of a Website — Learn Every Part',
-  description: 'An interactive skeleton website that labels and explains every common section of a modern website.',
+  title: 'Clearance — debt, cleared.',
+  description:
+    'A premium personal debt tracking dashboard. Watch your interest accrue in real time, compare avalanche vs snowball, and clear your runway.',
+  applicationName: 'Clearance',
+  authors: [{ name: 'Clearance' }],
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0a0c10',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,23 +27,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans">
-        {/* ── FULL PAGE WRAPPER ── */}
-        <div className="section-outline !m-2 !border-slate-300 min-h-screen flex flex-col">
-          <span className="label-tag !bg-slate-600">html / body</span>
-          <p className="section-desc !bottom-auto !top-8 !left-auto !right-8">
-            The root wrapper — everything lives inside here
-          </p>
-
-          <Header />
-
-          {/* ── MAIN CONTENT ── */}
-          <main className="flex-1">
-            {children}
-          </main>
-
-          <Footer />
-        </div>
+      <body>
+        <div className="ambient-glow" aria-hidden />
+        <div className="relative z-10 min-h-dvh">{children}</div>
       </body>
     </html>
   )

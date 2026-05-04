@@ -1,84 +1,286 @@
 @import "tailwindcss";
 
 @theme {
-  --color-label: #1e293b;
-  --color-label-bg: #fbbf24;
-  --color-border: #94a3b8;
-  --color-section-hero: #dbeafe;
-  --color-section-nav: #e0e7ff;
-  --color-section-features: #d1fae5;
-  --color-section-cta: #fef3c7;
-  --color-section-testimonials: #ede9fe;
-  --color-section-faq: #ffe4e6;
-  --color-section-footer: #1e293b;
-  --color-section-sidebar: #f0fdf4;
-  --color-section-grid: #f0f9ff;
-  --color-section-stats: #fdf4ff;
-  --color-section-newsletter: #ecfdf5;
-  --color-bg: #f8fafc;
-  --color-text: #334155;
+  --color-bg: #0a0c10;
+  --color-surface: #11141a;
+  --color-surface-elev: #171b22;
+  --color-surface-hover: #1c212a;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border-strong: rgba(255, 255, 255, 0.10);
+  --color-text: #fafafa;
+  --color-text-muted: rgba(250, 250, 250, 0.60);
+  --color-text-dim: rgba(250, 250, 250, 0.38);
+  --color-accent: #34D399;
+  --color-accent-soft: rgba(52, 211, 153, 0.12);
+  --color-accent-strong: #10b981;
+  --color-danger: #F87171;
+  --color-warning: #FBBF24;
 
-  --font-family-sans: 'Inter', system-ui, sans-serif;
-  --font-family-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+}
+
+* {
+  border-color: var(--color-border);
 }
 
 html {
-  scroll-behavior: smooth;
+  background: var(--color-bg);
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
 }
 
 body {
-  background-color: var(--color-bg);
+  background: var(--color-bg);
   color: var(--color-text);
+  font-family: var(--font-family-sans);
+  font-feature-settings: "cv11", "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
 }
 
-/* Label tag styling */
-.label-tag {
+/* Tabular numerals on every number. */
+.num,
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1, "ss01" 1, "cv11" 1;
+}
+
+.mono {
+  font-family: var(--font-family-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle ambient glow behind the dashboard — anchors the eye top-center. */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(60% 50% at 50% -10%, rgba(52, 211, 153, 0.08), transparent 60%),
+    radial-gradient(40% 40% at 100% 0%, rgba(99, 102, 241, 0.05), transparent 60%);
+}
+
+/* Hairline border helpers */
+.hairline {
+  border: 1px solid var(--color-border);
+}
+.hairline-b {
+  border-bottom: 1px solid var(--color-border);
+}
+.hairline-t {
+  border-top: 1px solid var(--color-border);
+}
+
+/* Card surface */
+.surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+}
+.surface-elev {
+  background: var(--color-surface-elev);
+  border: 1px solid var(--color-border-strong);
+  border-radius: 12px;
+}
+
+/* Inputs */
+.field {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: var(--font-family-sans);
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.field:hover {
+  background: var(--color-surface-hover);
+}
+.field:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
+}
+.field::placeholder {
+  color: var(--color-text-dim);
+}
+
+.field-num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Buttons */
+.btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  background: #1e293b;
-  color: #fbbf24;
-  font-family: var(--font-family-mono);
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 4px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  z-index: 10;
-}
-
-.label-tag::before {
-  content: "\2039";
-  opacity: 0.5;
-}
-
-.label-tag::after {
-  content: "\203A";
-  opacity: 0.5;
-}
-
-/* Dashed border for sections */
-.section-outline {
-  position: relative;
-  border: 2px dashed #94a3b8;
+  justify-content: center;
+  gap: 8px;
   border-radius: 8px;
-  margin: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease, transform 120ms ease;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: #04140c;
+  border: 1px solid var(--color-accent);
+  font-weight: 600;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+  border-color: var(--color-accent-strong);
+}
+.btn-secondary {
+  background: var(--color-surface-elev);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-strong);
+}
+.btn-secondary:hover:not(:disabled) {
+  background: var(--color-surface-hover);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  border: 1px solid transparent;
+}
+.btn-ghost:hover:not(:disabled) {
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+.btn-danger {
+  background: transparent;
+  color: var(--color-danger);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+}
+.btn-danger:hover:not(:disabled) {
+  background: rgba(248, 113, 113, 0.08);
 }
 
-/* Description tooltip */
-.section-desc {
-  font-family: var(--font-family-mono);
-  font-size: 0.75rem;
-  color: #64748b;
-  padding: 4px 10px;
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(255,255,255,0.85);
-  border-radius: 4px;
-  max-width: 300px;
+/* Focus rings */
+:focus-visible {
+  outline: none;
+}
+.btn:focus-visible,
+.field:focus-visible,
+.icon-btn:focus-visible,
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+}
+
+/* Icon button */
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.icon-btn:hover {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* Animations */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up {
+  animation: fade-up 320ms ease-out both;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade-in {
+  animation: fade-in 200ms ease-out both;
+}
+
+@keyframes sheet-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+.sheet-in-right {
+  animation: sheet-in-right 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes sheet-in-bottom {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+.sheet-in-bottom {
+  animation: sheet-in-bottom 260ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pulse-accent {
+  0%   { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.4); }
+  70%  { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+}
+.pulse-accent {
+  animation: pulse-accent 800ms ease-out;
+}
+
+/* Scrollbar — subtle, dark */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  border: 2px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Removes the ugly autofill background in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: var(--color-text);
+  transition: background-color 9999s ease-in-out 0s;
+  caret-color: var(--color-text);
+}
+
+/* iOS tap highlight removal */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
