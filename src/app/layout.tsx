@@ -7,6 +7,11 @@ export const metadata: Metadata = {
     'A premium personal debt tracking dashboard. Watch your interest accrue in real time, compare avalanche vs snowball, and clear your runway.',
   applicationName: 'Clearance',
   authors: [{ name: 'Clearance' }],
+  appleWebApp: {
+    title: 'Clearance',
+    capable: true,
+    statusBarStyle: 'black-translucent',
+  },
 }
 
 export const viewport: Viewport = {
