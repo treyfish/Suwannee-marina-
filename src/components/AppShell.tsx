@@ -7,7 +7,6 @@ import { liveBalance } from '@/lib/finance'
 import { formatCurrency } from '@/lib/format'
 import { Numeric } from './Numeric'
 import { LiveInterestTotal } from './LiveInterest'
-import { BrandMark } from './BrandMark'
 
 export type Tab = 'home' | 'strategy' | 'update' | 'settings'
 
@@ -42,16 +41,13 @@ export function AppShell({
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 md:py-4">
         {/* Brand */}
         <div className="flex items-center gap-2.5">
-          <div
-            className="flex h-8 w-8 items-center justify-center rounded-lg"
-            style={{
-              background: 'var(--color-accent-soft)',
-              color: 'var(--color-accent)',
-              border: '1px solid rgba(52,211,153,0.25)',
-            }}
-          >
-            <BrandMark size={20} title="Clearance" />
-          </div>
+          <img
+            src="/clearance-icon.png"
+            alt=""
+            className="h-8 w-8 rounded-lg"
+            width={32}
+            height={32}
+          />
           <span className="text-[14px] font-semibold tracking-tight">Clearance</span>
         </div>
 
